@@ -1,13 +1,49 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+}
+*{
+  box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
+
+}
+.pdf-document-dark-filtered .react-pdf__Page__canvas {
+  filter: grayscale(1) invert(1);
+}
+/* Define theme variables */
+:root {
+  --background-color-light: #f5f5f5;
+  --text-color-light: #1e1e1e;
+  --button-bg-light: #e0e0e0;
+  --button-text-light: #1e1e1e;
+
+  --background-color-dark: #1e1e1e;
+  --text-color-dark: #e0e0e0;
+  --button-bg-dark: #424242;
+  --button-text-dark: #e0e0e0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Apply theme */
+body[data-theme="light"] {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --button-bg: var(--button-bg-light);
+  --button-text: var(--button-text-light);
+}
+
+body[data-theme="dark"] {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --button-bg: var(--button-bg-dark);
+  --button-text: var(--button-text-dark);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
